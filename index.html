@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Missy Garcia 💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+  /* Background Gradient fallback */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: #880e4f;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /* Header container to center heading and typing text */
+  .header-container {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    z-index: 20;
+    text-align: center;
+  }
+
+  /* Animated hearts */
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: #d81b60;
+    transform: rotate(-45deg);
+    animation: floatUp 12s linear infinite;
+    opacity: 0.8;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #d81b60;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -15px;
+    left: 0;
+  }
+  .heart::after {
+    left: 15px;
+    top: 0;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-1200px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  /* Floating text bubbles */
+  .floating-text {
+    position: absolute;
+    bottom: -40px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #e91e63;
+    opacity: 0.9;
+    white-space: nowrap;
+    animation: floatTextUp 14s linear infinite;
+    user-select: none;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+  }
+  @keyframes floatTextUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(-1300px);
+      opacity: 0;
+    }
+  }
+
+  .heart:nth-child(1) { left: 20%; animation-delay: 0s; }
+  .heart:nth-child(2) { left: 40%; animation-delay: 2s; }
+  .heart:nth-child(3) { left: 60%; animation-delay: 4s; }
+  .heart:nth-child(4) { left: 80%; animation-delay: 1s; }
+  .heart:nth-child(5) { left: 50%; animation-delay: 3s; }
+
+  .floating-text:nth-child(6) { left: 10%; animation-delay: 0s; }
+  .floating-text:nth-child(7) { left: 30%; animation-delay: 1.5s; }
+  .floating-text:nth-child(8) { left: 50%; animation-delay: 3s; }
+  .floating-text:nth-child(9) { left: 70%; animation-delay: 0.75s; }
+  .floating-text:nth-child(10) { left: 85%; animation-delay: 2.5s; }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin: 0 0 10px 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  .typing {
+    border-right: 3px solid #880e4f;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.6rem;
+    max-width: 0;
+    animation:
+      typing 4s steps(40, end) forwards,
+      blink 0.75s step-end infinite;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+
+  .poem-container {
+    position: relative;
+    max-width: 600px;
+    margin: 50px auto 20px auto;
+    padding: 40px 20px 60px 20px;
+    background: rgba(255 255 255 / 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(216, 27, 96, 0.3);
+  }
+
+  .poem {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: #880e4f;
+  }
+  .poem em {
+    font-weight: 700;
+    font-style: normal;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+
+  /* Scattered photos around poem */
+  .scattered-photo {
+    position: absolute;
+    width: 160px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(216, 27, 96, 0.5);
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+  }
+  .scattered-photo:hover {
+    transform: scale(1.07) rotate(0deg);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(216, 27, 96, 0.8);
+  }
+
+  #photo1 {
+    top: -70px;
+    left: -180px;
+    transform: rotate(-10deg);
+  }
+  #photo2 {
+    top: 10px;
+    right: -140px;
+    transform: rotate(8deg);
+  }
+  #photo3 {
+    bottom: -90px;
+    left: -140px;
+    transform: rotate(5deg);
+  }
+  #photo4 {
+    bottom: -50px;
+    right: -170px;
+    transform: rotate(-7deg);
+  }
+
+  /* Spotify embed container */
+  .spotify-player {
+    margin: 30px auto 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(216, 27, 96, 0.3);
+    width: 100%;
+    max-width: 660px;
+  }
+
+  iframe {
+    border-radius: 12px;
+  }
+
+  /* Eat Button */
+  #eat-button {
+    margin: 40px auto 0 auto;
+    padding: 12px 24px;
+    font-size: 1.3rem;
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(216, 27, 96, 0.5);
+    transition: background-color 0.3s ease;
+    display: block;
+  }
+  #eat-button:hover {
+    background-color: #ad1457;
+  }
+
+  /* Bubu & Dude GIF container */
+  #eat-gif {
+    margin: 30px auto 0 auto;
+    max-width: 320px;
+    display: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(216, 27, 96, 0.3);
+    display: block;
+  }
+
+  @keyframes typing {
+    from { max-width: 0 }
+    to { max-width: 100% }
+  }
+  @keyframes blink {
+    50% { border-color: transparent }
+  }
+  @keyframes fadeIn {
+    to { opacity: 1 }
+  }
+  @keyframes fadeInPoem {
+    to { opacity: 1 }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating hearts -->
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+<div class="heart"></div>
+
+<!-- Floating Text Containers -->
+<div class="floating-text" style="left:10%;">Happy National Girlfriend Day</div>
+<div class="floating-text" style="left:30%; animation-delay:1.5s;">Happy National Girlfriend Day</div>
+<div class="floating-text" style="left:50%; animation-delay:3s;">Happy National Girlfriend Day</div>
+<div class="floating-text" style="left:70%; animation-delay:0.75s;">Happy National Girlfriend Day</div>
+<div class="floating-text" style="left:85%; animation-delay:2.5s;">Happy National Girlfriend Day</div>
+
+<!-- Header container for centered title and typing text -->
+<div class="header-container">
+  <h1>For Missy Garcia 💖</h1>
+  <div class="typing">Happy National Girlfriend Day, my love!</div>
+</div>
+
+<!-- Poem container with scattered photos -->
+<div class="poem-container">
+  <div class="poem">
+    <em>1 Corinthians 13:4-7 (NIV)</em><br/>
+    Love is patient, love is kind.<br />
+    It does not envy, it does not boast, it is not proud.<br />
+    It does not dishonor others, it is not self-seeking, it is not easily angered,<br />
+    it keeps no record of wrongs.<br />
+    Love does not delight in evil but rejoices with the truth.<br />
+    It always protects, always trusts, always hopes, always perseveres.
+  </div>
+
+  <!-- Scattered photos -->
+  <img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
+  <img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
+  <img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
+  <img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
+</div>
+
+<!-- Spotify Embed -->
+<div class="spotify-player">
+  <iframe
+    data-testid="embed-iframe"
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator"
+    width="100%"
+    height="352"
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>
+</div>
+
+<!-- Eat Button -->
+<button id="eat-button">Eat 🍴</button>
+
+<!-- Bubu & Dude GIF -->
+<img
+  id="eat-gif"
+  src="Eating bubu and dudu.gif"
+  alt="Bubu and Dude Eating Animation"
+/>
+
+<script>
+  // Eat button logic
+  const eatBtn = document.getElementById('eat-button');
+  const eatGif = document.getElementById('eat-gif');
+
+  eatBtn.addEventListener('click', () => {
+    eatGif.style.display = 'block';
+    eatBtn.disabled = true;
+
+    setTimeout(() => {
+      eatGif.style.display = 'none';
+      eatBtn.disabled = false;
+    }, 6000);
+  });
+</script>
+
+</body>
+</html>
