@@ -7,16 +7,14 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
-  /* Background Gradient fallback */
   body {
     margin: 0;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
     color: #880e4f;
     text-align: center;
@@ -25,7 +23,6 @@
     position: relative;
   }
 
-  /* Header container to center heading and typing text */
   .header-container {
     max-width: 700px;
     margin: 0 auto 40px auto;
@@ -34,7 +31,6 @@
     text-align: center;
   }
 
-  /* Photos container */
   .photos-container {
     position: relative;
     width: 300px;
@@ -42,7 +38,6 @@
     margin: 0 auto 20px auto;
   }
 
-  /* Scattered photos styles */
   .scattered-photo {
     position: absolute;
     width: 130px;
@@ -53,33 +48,11 @@
     transition: transform 0.3s ease;
   }
 
-  /* Individual photo positions using transform */
-  #photo1 {
-    top: 10px;
-    left: 0;
-    transform: rotate(-10deg);
-    z-index: 10;
-  }
-  #photo2 {
-    top: 0;
-    left: 100px;
-    transform: rotate(8deg);
-    z-index: 12;
-  }
-  #photo3 {
-    top: 130px;
-    left: 20px;
-    transform: rotate(15deg);
-    z-index: 9;
-  }
-  #photo4 {
-    top: 120px;
-    left: 160px;
-    transform: rotate(-12deg);
-    z-index: 11;
-  }
+  #photo1 { top: 10px; left: 0; transform: rotate(-10deg); z-index: 10; }
+  #photo2 { top: 0; left: 100px; transform: rotate(8deg); z-index: 12; }
+  #photo3 { top: 130px; left: 20px; transform: rotate(15deg); z-index: 9; }
+  #photo4 { top: 120px; left: 160px; transform: rotate(-12deg); z-index: 11; }
 
-  /* Header text styling */
   h1 {
     font-family: 'Great Vibes', cursive;
     font-size: 3.6rem;
@@ -88,7 +61,6 @@
     margin: 0 0 10px 0;
   }
 
-  /* Subtitle text */
   .subtitle {
     font-weight: 700;
     font-size: 1.15rem;
@@ -98,7 +70,6 @@
     max-width: 450px;
   }
 
-  /* Bible quote container */
   .quote-container {
     background: rgba(255 255 255 / 0.85);
     border-radius: 20px;
@@ -116,7 +87,21 @@
     font-style: normal;
   }
 
-  /* Spotify player container */
+  .letter-container {
+    max-width: 600px;
+    max-height: 320px;
+    overflow-y: auto;
+    background: rgba(255 255 255 / 0.9);
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin: 0 auto 40px auto;
+    color: #660033;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(102,0,51,0.3);
+  }
+
   .spotify-player {
     max-width: 480px;
     margin: 0 auto 40px auto;
@@ -125,11 +110,28 @@
     overflow: hidden;
   }
 
-  /* GIF container */
   #eat-gif {
     display: block;
-    margin: 0 auto 60px auto;
+    margin: 0 auto 40px auto;
     max-width: 240px;
+  }
+
+  #flowers-button {
+    background-color: #d81b60;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 auto 60px auto;
+    display: block;
+    box-shadow: 0 6px 12px rgba(216,27,96,0.6);
+    transition: background-color 0.3s ease;
+  }
+  #flowers-button:hover {
+    background-color: #a31544;
   }
 
   /* Animated hearts and text */
@@ -164,6 +166,27 @@
       opacity: 0;
     }
   }
+
+  /* Falling flowers animation */
+  .flower {
+    position: fixed;
+    font-size: 24px;
+    animation: fallFlower 4s linear forwards;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+  }
+
+  @keyframes fallFlower {
+    0% {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
 </style>
 </head>
 <body>
@@ -191,6 +214,12 @@
   </p>
 </div>
 
+<div class="letter-container" id="letter">
+  <!-- Your letter will be inserted here by JS -->
+</div>
+
+<button id="flowers-button">Send Virtual Flowers 🌸</button>
+
 <div class="spotify-player">
   <iframe
     data-testid="embed-iframe"
@@ -204,7 +233,6 @@
   ></iframe>
 </div>
 
-<!-- Keep the GIF visible, no button -->
 <img
   id="eat-gif"
   src="Eating bubu and dudu.gif"
@@ -212,6 +240,56 @@
 />
 
 <script>
+  // Insert the letter text nicely formatted
+  const letterText = `
+Good morning, baby! I hope ur doing well! Remember to do your best! You got this! Take a breath and remember you are amazing. Don’t let anyone else tell you otherwise. They don’t see how I see you AT ALL! You’re the most beautiful girl ever. You’re so sweet and you’re willing to communicate is so attractive. You’re smart and strong. You make everyday special and I love you for that! You’ve made me so proud based on how much work you can complete! I LOVE YOU! I saw ur reposts on your relationship between your mother and you. I hope she’s doing it out of love and discipline 😇 My mother can be like that sometimes as well, but we learn and we grow. Love your parents and be grateful for them everyday! Why am I telling you this? At one point, our parents will pass away and we gotta make sure every moment counts. My friends’s parents passed away during his service in the military (he didn’t have the opportunity to spend time with his parents). Told me to talk with my parents because one day, they won’t be here. I know it can be a hard pill to swallow, but she can’t be doing that out of hatred, but love. She loves you! She worries about you and wants the best for you. Missy, you may not agree with their parenting styles, but I want you to know  that it doesn’t have to influence you in negative ways. When we have children, our parenting styles will vary, but ultimately for the best for our children. I know, why am I talking about children lol. I’m so lucky to have you, baby! Really, I love you every day. You don’t understand how many times I write in a notebook or walk around in my room thinking about our future. I’m excited, and I’m glad to have you! I know you will be a great mother! Keep being a good example for your nieces! It will help in the future. I love you so much!<br><br>
+
+Missy,<br><br>
+
+Every single day, I find myself falling in love with you all over again. It’s the smallest things that do it! A simple text lights my day, even a call from you (or your nieces lol).<br><br>
+
+I wait for your messages because they’ve become one of the most valuable parts of my life. When my phone lights up with your name, my eyes open up and shifts my entire mood. My friends don’t understand just how much I love you. They say I’m crazy, crazy for you ( music plays 🥁). I want to make sure you’re reassured because I want YOU and I LOVE YOU.<br><br>
+
+The way you we talk, handle conflict, and introduced me to your family, how we send each other tiktoks and reels and laugh at silly things, all of that makes me feel so close to you. Even in arguments, we somehow always finder way back to each other, a stronger bond than before. AND I LOVE YOU FOR THAT SO FUCKING MUCH! I’m glad to have you! You really are going to be a great mother!<br><br>
+
+I just want you to know that, through burials of emotions for the past 8 years, this year, you’ve taught me how to connect with them and actually experience love for the first time! You’re so special to me! I’m the type of guy that would never date another woman if you disappeared, I would just enlist into a combat MOS and help as many people before I die. You’ve changed me in ways I could never have thought.<br><br>
+
+You’ve made me better without trying. You probably don’t realize that, but you’ve changed the little things in my life. I used to struggle waking up at 5 AM, but now it’s easy because I wake up thinking about you. You should see what happens when we sleep in the same bed, and text me lol. I have a physical reaction and hope it’s you. It’s like 2 hours of sleep turns into 12 hours of sleep. To be honest, if we slept together I would hate to sleep after you because I could not stop thinking about you all night. I hope you have sleep problems as well lol. We could hang out and do something dancing at night or what not. We could get ice cream or blow stuff up!!! We could drop water balloons on people with drones HAHHAHHAH. I can’t wait to do that with you! I should really get a camera for photography! YOU WOULD LOOK SO STUNNING. Believe me, I would tear up a little because of just how BEAUTIFUL you are! Gosh, after writing that I did let out a small tear lol. Someone walked in and I hope they didn’t see that hahaha.<br><br>
+
+I”m so proud of you. I see how hard you work, and it inspires me to triple my work loud. And more than anything, I wish you could step in my heart for just one moment to see yourself the way I see you because it’s so difficult to explain how much I love you into a text message. I went through great authors on love, and none of them can describe just how much I love you and CONTINUE to love you in ways I could NEVER simplify.<br><br>
+
+If I were with you right now, I’d hold you so tight and kiss you, and I look forward to that moment. We’d fall asleep together, safe and at peace. I would never let you go lol. I would just carry you all day and have no problem with it. I would just baby you and feed you those mango rolls you love!<br><br>
+
+You are my reason to try every single day. I love you honey. N matter what life throws at us, as long we have each other, we will be okay! You’re going to be a great wife, mother, and grandmother! I can’t wait to experience everything with you.<br><br>
+
+Forever yours,<br>Manuel<br><br>HAPPY NATIONAL GIRLFRIEND DAY!!!!!
+`;
+
+  document.getElementById('letter').innerHTML = letterText;
+
+  // Virtual Flowers animation
+  const flowersButton = document.getElementById('flowers-button');
+
+  function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
+    flower.style.left = Math.random() * 95 + 'vw';
+    flower.style.fontSize = (12 + Math.random() * 20) + 'px';
+    flower.style.animationDuration = (4 + Math.random() * 2) + 's';
+    flower.style.animationDelay = '0s';
+    flower.textContent = '🌸';
+    document.body.appendChild(flower);
+
+    flower.addEventListener('animationend', () => flower.remove());
+  }
+
+  flowersButton.addEventListener('click', () => {
+    // Create a burst of flowers
+    for (let i = 0; i < 30; i++) {
+      setTimeout(createFlower, i * 150);
+    }
+  });
+
   // Animate hearts and floating text creation
   function createFloatingElement(className, content, leftPercent) {
     const el = document.createElement('div');
@@ -220,21 +298,19 @@
     if (className === 'floating-text') el.textContent = content;
     document.body.appendChild(el);
 
-    // Remove after animation ends (8s)
     setTimeout(() => el.remove(), 8000);
   }
 
-  // Continuously generate hearts and floating text at random intervals
   setInterval(() => {
-    // Random left position for hearts and text (5% to 90%)
     const heartLeft = Math.random() * 85 + 5;
     const textLeft = Math.random() * 85 + 5;
-
     createFloatingElement('heart', null, heartLeft);
     createFloatingElement('floating-text', 'Happy National Girlfriend Day', textLeft);
   }, 700);
+
 </script>
 
 </body>
 </html>
+
 
