@@ -5,261 +5,290 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Missy Garcia 💖</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
-  /* Background Gradient fallback */
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    overflow-x: hidden;
-    color: #880e4f;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
+/* Background Gradient fallback */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  overflow-x: hidden;
+  color: #880e4f;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Header container to center heading and typing text */
+.header-container {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+
+/* Animated hearts */
+.heart {
+  position: absolute;
+  bottom: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: #d81b60;
+  clip-path: polygon(50% 0%, 61% 17%, 78% 17%, 89% 30%, 89% 54%, 50% 100%, 11% 54%, 11% 30%, 22% 17%, 39% 17%);
+  animation: floatUp 6s linear infinite;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* Different starting horizontal positions and animation delays */
+.heart:nth-child(1) {
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+  left: 40%;
+  animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+  left: 65%;
+  animation-delay: 4s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.9;
   }
+  100% {
+    transform: translateY(-130vh) translateX(15px) scale(1.5);
+    opacity: 0;
+  }
+}
 
-  /* Header container */
+/* Floating text "Happy National Girlfriend Day" */
+.happy-text {
+  position: absolute;
+  bottom: -50px;
+  width: 300px;
+  color: #e91e63;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  animation: floatUpText 8s linear infinite;
+  z-index: 11;
+}
+
+.happy-text:nth-child(4) {
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.happy-text:nth-child(5) {
+  left: 55%;
+  animation-delay: 3s;
+}
+
+.happy-text:nth-child(6) {
+  left: 75%;
+  animation-delay: 5s;
+}
+
+@keyframes floatUpText {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-130vh) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+/* Scattered photos */
+.scattered-photo {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  z-index: 30;
+}
+
+#photo1 {
+  top: 60px;
+  left: 10vw;
+  transform: rotate(-15deg);
+}
+#photo2 {
+  top: 10vh;
+  left: 24vw;
+  transform: rotate(10deg);
+}
+#photo3 {
+  top: 25vh;
+  left: 35vw;
+  transform: rotate(-10deg);
+}
+#photo4 {
+  top: 50vh;
+  left: 20vw;
+  transform: rotate(12deg);
+}
+
+/* Header text */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  margin-bottom: 8px;
+  color: #b71c1c;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #880e4f;
+}
+
+/* Bible quote box */
+.quote-box {
+  background-color: rgba(255 255 255 / 0.85);
+  max-width: 380px;
+  margin: 0 auto 40px auto;
+  padding: 20px 30px;
+  border-radius: 20px;
+  font-style: italic;
+  color: #a31545;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.3);
+  text-align: center;
+}
+
+/* Spotify embed */
+.spotify-player {
+  max-width: 350px;
+  margin: 0 auto 30px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(183, 28, 28, 0.3);
+}
+
+/* Eat button */
+#eat-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #880e4f, #b71c1c);
+  color: white;
+  font-weight: 700;
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.5);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+#eat-button:hover {
+  background: linear-gradient(135deg, #b71c1c, #880e4f);
+  box-shadow: 0 6px 20px rgba(183, 28, 28, 0.8);
+}
+
+/* Eat gif */
+#eat-gif {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 50;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.7);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
   .header-container {
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    position: relative;
-    z-index: 20;
-    text-align: center;
+    max-width: 90vw !important;
+    margin: 0 auto 40px auto !important;
+    text-align: center !important;
   }
 
-  /* Animated hearts */
-  .heart {
-    position: absolute;
-    bottom: -50px;
-    width: 30px;
-    height: 30px;
-    background-color: #d81b60;
-    clip-path: polygon(
-      50% 0%, 61% 9%, 68% 17%, 75% 25%, 80% 34%, 84% 43%, 87% 52%,
-      88% 62%, 88% 73%, 85% 80%, 81% 87%, 75% 92%, 67% 95%, 58% 96%,
-      50% 93%, 42% 96%, 33% 95%, 25% 92%, 19% 87%, 15% 80%, 12% 73%,
-      12% 62%, 13% 52%, 16% 43%, 20% 34%, 25% 25%, 32% 17%, 39% 9%
-    );
-    animation: rise 8s linear infinite;
-  }
-  .heart:nth-child(2) {
-    left: 25%;
-    animation-delay: 2s;
-  }
-  .heart:nth-child(3) {
-    left: 50%;
-    animation-delay: 4s;
-  }
-  .heart:nth-child(4) {
-    left: 75%;
-    animation-delay: 6s;
-  }
-
-  @keyframes rise {
-    0% {
-      bottom: -50px;
-      opacity: 1;
-      transform: translateX(0) scale(1) rotate(0deg);
-    }
-    100% {
-      bottom: 110vh;
-      opacity: 0;
-      transform: translateX(50px) scale(1.3) rotate(360deg);
-    }
-  }
-
-  /* Animated "Happy National Girlfriend Day" text */
-  .floating-text {
-    position: absolute;
-    bottom: -40px;
-    width: 100%;
-    font-weight: bold;
-    font-size: 18px;
-    color: #f48fb1;
-    animation: floatUp 8s linear infinite;
-  }
-  .floating-text:nth-child(5) { animation-delay: 0s; }
-  .floating-text:nth-child(6) { animation-delay: 3s; }
-  .floating-text:nth-child(7) { animation-delay: 6s; }
-
-  @keyframes floatUp {
-    0% {
-      bottom: -40px;
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
-    100% {
-      bottom: 110vh;
-      opacity: 0;
-      transform: translateX(30px) scale(1.2);
-    }
-  }
-
-  /* Photos scattered and rotated */
   .scattered-photo {
-    position: absolute;
-    max-width: 120px;
-    max-height: 200px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease;
-  }
-  .scattered-photo:hover {
-    transform: scale(1.2) rotate(0deg);
-    z-index: 100;
-  }
-  #photo1 { top: 50px; left: 10%; transform: rotate(-8deg);}
-  #photo2 { top: 150px; right: 15%; transform: rotate(10deg);}
-  #photo3 { top: 220px; left: 40%; transform: rotate(-12deg);}
-  #photo4 { top: 130px; right: 45%; transform: rotate(7deg);}
-  #photo5 { top: 70px; left: 70%; transform: rotate(-6deg);}
-  #photo6 { top: 200px; left: 80%; transform: rotate(12deg);}
-
-  /* Header text styles */
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    margin-bottom: 0.1rem;
-    color: #b71c1c;
-  }
-  p.subtitle {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 40px;
-    color: #880e4f;
+    max-width: 30vw !important;
+    max-height: 30vw !important;
   }
 
-  /* Bible Quote Box */
-  .quote-box {
-    font-style: italic;
-    max-width: 650px;
-    margin: 60px auto 40px auto;
-    font-size: 1.3rem;
-    line-height: 1.4;
-    background: rgba(255 255 255 / 0.7);
-    padding: 20px 25px;
-    border-radius: 25px;
-    box-shadow: 0 5px 15px rgba(136, 14, 79, 0.35);
+  .heart, .happy-text {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
-
-  /* Spotify Embed */
-  .spotify-player {
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  /* Eat button */
-  #eat-button {
-    background-color: #d81b60;
-    border: none;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 30px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 6px 10px rgba(216, 27, 96, 0.4);
-    margin: 0 auto 50px auto;
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  #eat-button:hover {
-    background-color: #b71c1c;
-  }
-
-  /* Eat GIF */
-  #eat-gif {
-    display: none;
-    max-width: 200px;
-    margin: 0 auto 40px auto;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(216, 27, 96, 0.4);
-  }
+}
 </style>
 </head>
 <body>
+<div class="header-container">
+  <h1>For Missy Garcia 💖</h1>
+  <h2>Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</h2>
+</div>
 
-  <div class="header-container">
-    <h1>For Missy Garcia 💖</h1>
-    <p class="subtitle">Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</p>
-  </div>
+<img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
+<img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
+<img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
+<img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
 
-  <!-- Floating hearts -->
-  <div class="heart" style="left: 15%; animation-delay: 0s;"></div>
-  <div class="heart" style="left: 40%; animation-delay: 2.5s;"></div>
-  <div class="heart" style="left: 65%; animation-delay: 4s;"></div>
-  <div class="heart" style="left: 90%; animation-delay: 5s;"></div>
-
-  <!-- Floating Happy National Girlfriend Day text -->
-  <div class="floating-text" style="left: 15%; animation-delay: 0s;">Happy National Girlfriend Day</div>
-  <div class="floating-text" style="left: 45%; animation-delay: 2.5s;">Happy National Girlfriend Day</div>
-  <div class="floating-text" style="left: 75%; animation-delay: 5s;">Happy National Girlfriend Day</div>
-
-  <!-- Scattered photos -->
-  <img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
-  <img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
-  <img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
-  <img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
-  <img id="photo5" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 5" />
-  <img id="photo6" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 6" />
-
-  <!-- Bible Quote -->
-  <div class="quote-box">
-    “Love is patient, love is kind. It does not envy, it does not boast, it is not proud. <br />
+<div class="quote-box">
+  <p>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud.<br />
     It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.<br />
     Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres.”<br />
     <strong>1 Corinthians 13:4-7</strong>
-  </div>
+  </p>
+</div>
 
-  <!-- Spotify Embed -->
-  <div class="spotify-player">
-    <iframe
-      data-testid="embed-iframe"
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator"
-      width="100%"
-      height="352"
-      frameborder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    ></iframe>
-  </div>
+<div class="spotify-player">
+  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 
-  <!-- Eat Button -->
-  <button id="eat-button">Eat 🍽️</button>
+<button id="eat-button">Eat 🍽️</button>
 
-  <!-- Bubu & Dude GIF -->
-  <img
-    id="eat-gif"
-    src="Eating bubu and dudu.gif"
-    alt="Bubu and Dude Eating Animation"
-  />
+<img id="eat-gif" src="Eating bubu and dudu.gif" alt="Bubu and Dude Eating Animation" />
 
 <script>
-  // Eat button logic
-  const eatBtn = document.getElementById('eat-button');
-  const eatGif = document.getElementById('eat-gif');
+const eatBtn = document.getElementById('eat-button');
+const eatGif = document.getElementById('eat-gif');
 
-  eatBtn.addEventListener('click', () => {
-    eatGif.style.display = 'block';
-    setTimeout(() => {
-      eatGif.style.display = 'none';
-    }, 3000);
-  });
+eatBtn.addEventListener('click', () => {
+  eatGif.style.display = 'block';
+  setTimeout(() => {
+    eatGif.style.display = 'none';
+  }, 2500);
+});
 </script>
+
+<div class="heart" style="left: 15%; animation-delay: 0s;"></div>
+<div class="heart" style="left: 40%; animation-delay: 2s;"></div>
+<div class="heart" style="left: 65%; animation-delay: 4s;"></div>
+
+<div class="happy-text" style="left: 30%; animation-delay: 1s;">Happy National Girlfriend Day</div>
+<div class="happy-text" style="left: 55%; animation-delay: 3s;">Happy National Girlfriend Day</div>
+<div class="happy-text" style="left: 75%; animation-delay: 5s;">Happy National Girlfriend Day</div>
 
 </body>
 </html>
+
 
