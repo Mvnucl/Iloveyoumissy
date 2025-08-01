@@ -5,291 +5,309 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Missy Garcia 💖</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
-/* Background Gradient fallback */
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  overflow-x: hidden;
-  color: #880e4f;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* Header container to center heading and typing text */
-.header-container {
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  position: relative;
-  z-index: 20;
-  text-align: center;
-}
-
-/* Animated hearts */
-.heart {
-  position: absolute;
-  bottom: -50px;
-  width: 30px;
-  height: 30px;
-  background-color: #d81b60;
-  clip-path: polygon(50% 0%, 61% 17%, 78% 17%, 89% 30%, 89% 54%, 50% 100%, 11% 54%, 11% 30%, 22% 17%, 39% 17%);
-  animation: floatUp 6s linear infinite;
-  opacity: 0.9;
-  z-index: 10;
-}
-
-/* Different starting horizontal positions and animation delays */
-.heart:nth-child(1) {
-  left: 15%;
-  animation-delay: 0s;
-}
-
-.heart:nth-child(2) {
-  left: 40%;
-  animation-delay: 2s;
-}
-
-.heart:nth-child(3) {
-  left: 65%;
-  animation-delay: 4s;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-    opacity: 0.9;
+  /* Background Gradient fallback */
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: #880e4f;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
   }
-  100% {
-    transform: translateY(-130vh) translateX(15px) scale(1.5);
-    opacity: 0;
+
+  /* Header container to center heading and typing text */
+  .header-container {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    z-index: 20;
+    text-align: center;
   }
-}
 
-/* Floating text "Happy National Girlfriend Day" */
-.happy-text {
-  position: absolute;
-  bottom: -50px;
-  width: 300px;
-  color: #e91e63;
-  font-weight: 700;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
-  animation: floatUpText 8s linear infinite;
-  z-index: 11;
-}
+  /* Animated hearts */
+  .heart {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: #d81b60;
+    clip-path: polygon(
+      50% 0%, 61% 8%, 68% 17%, 75% 27%, 78% 39%, 78% 52%,
+      75% 65%, 68% 75%, 61% 83%, 50% 92%, 39% 83%, 32% 75%,
+      25% 65%, 22% 52%, 22% 39%, 25% 27%, 32% 17%, 39% 8%
+    );
+    animation: floatUp 7s linear infinite;
+  }
 
-.happy-text:nth-child(4) {
-  left: 30%;
-  animation-delay: 1s;
-}
+  @keyframes floatUp {
+    0% {
+      bottom: -50px;
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+    100% {
+      bottom: 110vh;
+      opacity: 0;
+      transform: translateX(50px) rotate(720deg);
+    }
+  }
 
-.happy-text:nth-child(5) {
-  left: 55%;
-  animation-delay: 3s;
-}
+  /* Scattered photos */
+  .scattered-photo {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+  }
 
-.happy-text:nth-child(6) {
-  left: 75%;
-  animation-delay: 5s;
-}
+  #photo1 {
+    top: 40px;
+    left: 20px;
+    width: 110px;
+    height: 130px;
+    transform: rotate(-12deg);
+    z-index: 30;
+  }
 
-@keyframes floatUpText {
-  0% {
-    transform: translateY(0) translateX(0);
+  #photo2 {
+    top: 20px;
+    left: 100px;
+    width: 110px;
+    height: 130px;
+    transform: rotate(14deg);
+    z-index: 25;
+  }
+
+  #photo3 {
+    top: 130px;
+    left: 50px;
+    width: 110px;
+    height: 130px;
+    transform: rotate(10deg);
+    z-index: 20;
+  }
+
+  #photo4 {
+    top: 90px;
+    left: 140px;
+    width: 110px;
+    height: 130px;
+    transform: rotate(-9deg);
+    z-index: 15;
+  }
+
+  /* Title styling */
+  h1.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    margin-bottom: 0.3em;
+    color: #c62828;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  }
+
+  /* Subtitle */
+  .subtitle {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #6a1b9a;
+    margin-bottom: 2rem;
+  }
+
+  /* Bible Quote block */
+  .bible-quote {
+    max-width: 320px;
+    margin: 0 auto 2rem auto;
+    padding: 25px;
+    background: #f8bbd0;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #880e4f;
+  }
+
+  .bible-quote b {
+    font-weight: 700;
+  }
+
+  /* Spotify Embed Container */
+  .spotify-player {
+    max-width: 320px;
+    margin: 0 auto 2rem auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  iframe {
+    border-radius: 16px;
+  }
+
+  /* Eat Button */
+  #eat-button {
+    display: block;
+    margin: 0 auto 4rem auto;
+    padding: 14px 32px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #c2185b, #e91e63);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(194,24,91,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #eat-button:hover {
+    background: linear-gradient(135deg, #e91e63, #f48fb1);
+    box-shadow: 0 12px 20px rgba(233,30,99,0.7);
+  }
+
+  /* Eat GIF */
+  #eat-gif {
+    display: none;
+    max-width: 220px;
+    margin: 0 auto 3rem auto;
+  }
+
+  /* Pink Hearts Text animation */
+  .pink-text {
+    position: absolute;
+    font-weight: 700;
+    color: #ff1493;
+    font-size: 1.2rem;
+    animation: floatTextUp 7s linear infinite;
     opacity: 1;
   }
-  100% {
-    transform: translateY(-130vh) translateX(-10px);
-    opacity: 0;
-  }
-}
 
-/* Scattered photos */
-.scattered-photo {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-  z-index: 30;
-}
-
-#photo1 {
-  top: 60px;
-  left: 10vw;
-  transform: rotate(-15deg);
-}
-#photo2 {
-  top: 10vh;
-  left: 24vw;
-  transform: rotate(10deg);
-}
-#photo3 {
-  top: 25vh;
-  left: 35vw;
-  transform: rotate(-10deg);
-}
-#photo4 {
-  top: 50vh;
-  left: 20vw;
-  transform: rotate(12deg);
-}
-
-/* Header text */
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 48px;
-  margin-bottom: 8px;
-  color: #b71c1c;
-}
-
-h2 {
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #880e4f;
-}
-
-/* Bible quote box */
-.quote-box {
-  background-color: rgba(255 255 255 / 0.85);
-  max-width: 380px;
-  margin: 0 auto 40px auto;
-  padding: 20px 30px;
-  border-radius: 20px;
-  font-style: italic;
-  color: #a31545;
-  font-size: 18px;
-  font-weight: 500;
-  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.3);
-  text-align: center;
-}
-
-/* Spotify embed */
-.spotify-player {
-  max-width: 350px;
-  margin: 0 auto 30px auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(183, 28, 28, 0.3);
-}
-
-/* Eat button */
-#eat-button {
-  display: inline-block;
-  background: linear-gradient(135deg, #880e4f, #b71c1c);
-  color: white;
-  font-weight: 700;
-  padding: 15px 40px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.5);
-  transition: all 0.3s ease;
-  user-select: none;
-}
-
-#eat-button:hover {
-  background: linear-gradient(135deg, #b71c1c, #880e4f);
-  box-shadow: 0 6px 20px rgba(183, 28, 28, 0.8);
-}
-
-/* Eat gif */
-#eat-gif {
-  display: none;
-  position: fixed;
-  bottom: 60px;
-  right: 40px;
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
-  z-index: 50;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.7);
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .header-container {
-    max-width: 90vw !important;
-    margin: 0 auto 40px auto !important;
-    text-align: center !important;
+  @keyframes floatTextUp {
+    0% {
+      bottom: -20px;
+      opacity: 1;
+      transform: translateX(0) rotate(0deg);
+    }
+    100% {
+      bottom: 110vh;
+      opacity: 0;
+      transform: translateX(50px) rotate(720deg);
+    }
   }
 
-  .scattered-photo {
-    max-width: 30vw !important;
-    max-height: 30vw !important;
-  }
+  /* Responsive fixes for mobile */
+  @media (max-width: 600px) {
+    .scattered-photo {
+      max-width: 25vw !important;
+      max-height: 25vw !important;
+      margin-top: 80px; /* push photos below header */
+    }
 
-  .heart, .happy-text {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    .header-container {
+      margin-bottom: 20px;
+    }
+
+    .bible-quote {
+      margin-top: 40px;
+    }
   }
-}
 </style>
 </head>
 <body>
-<div class="header-container">
-  <h1>For Missy Garcia 💖</h1>
-  <h2>Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</h2>
-</div>
+  <div class="header-container">
+    <h1 class="title">For Missy Garcia 💖</h1>
+    <div>
+      <img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
+      <img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
+      <img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
+      <img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
+    </div>
+    <p class="subtitle">Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</p>
+  </div>
 
-<img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
-<img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
-<img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
-<img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
+  <div class="bible-quote">
+    “Love is patient, love is kind. It does not envy, it does not boast, it is not proud.<br/>
+    It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.<br/>
+    Love does not delight in evil but rejoices with the truth. It always protects, always trusts,<br/>
+    always hopes, always perseveres.”<br/>
+    <b>1 Corinthians 13:4-7</b>
+  </div>
 
-<div class="quote-box">
-  <p>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud.<br />
-    It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.<br />
-    Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres.”<br />
-    <strong>1 Corinthians 13:4-7</strong>
-  </p>
-</div>
+  <div class="spotify-player">
+    <iframe
+      data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator"
+      width="100%"
+      height="352"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
 
-<div class="spotify-player">
-  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
+  <button id="eat-button">Eat 🍽️</button>
+  <img id="eat-gif" src="Eating bubu and dudu.gif" alt="Bubu and Dude Eating Animation" />
 
-<button id="eat-button">Eat 🍽️</button>
+  <!-- Floating hearts container -->
+  <div id="hearts-container"></div>
+  <!-- Floating pink text container -->
+  <div id="pink-text-container"></div>
 
-<img id="eat-gif" src="Eating bubu and dudu.gif" alt="Bubu and Dude Eating Animation" />
+  <script>
+    // Eat button logic
+    const eatBtn = document.getElementById('eat-button');
+    const eatGif = document.getElementById('eat-gif');
 
-<script>
-const eatBtn = document.getElementById('eat-button');
-const eatGif = document.getElementById('eat-gif');
+    eatBtn.addEventListener('click', () => {
+      eatGif.style.display = 'block';
+      setTimeout(() => {
+        eatGif.style.display = 'none';
+      }, 7000);
+    });
 
-eatBtn.addEventListener('click', () => {
-  eatGif.style.display = 'block';
-  setTimeout(() => {
-    eatGif.style.display = 'none';
-  }, 2500);
-});
-</script>
+    // Floating hearts logic
+    const heartsContainer = document.getElementById('hearts-container');
+    const pinkTextContainer = document.getElementById('pink-text-container');
 
-<div class="heart" style="left: 15%; animation-delay: 0s;"></div>
-<div class="heart" style="left: 40%; animation-delay: 2s;"></div>
-<div class="heart" style="left: 65%; animation-delay: 4s;"></div>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
+      heartsContainer.appendChild(heart);
 
-<div class="happy-text" style="left: 30%; animation-delay: 1s;">Happy National Girlfriend Day</div>
-<div class="happy-text" style="left: 55%; animation-delay: 3s;">Happy National Girlfriend Day</div>
-<div class="happy-text" style="left: 75%; animation-delay: 5s;">Happy National Girlfriend Day</div>
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
 
+    function createPinkText() {
+      const text = document.createElement('div');
+      text.classList.add('pink-text');
+      text.style.left = Math.random() * 100 + 'vw';
+      text.textContent = 'Happy national girlfriend day';
+      text.style.animationDuration = (5 + Math.random() * 5) + 's';
+      pinkTextContainer.appendChild(text);
+
+      setTimeout(() => {
+        text.remove();
+      }, 10000);
+    }
+
+    setInterval(createHeart, 600);
+    setInterval(createPinkText, 1200);
+  </script>
 </body>
 </html>
-
-
-
