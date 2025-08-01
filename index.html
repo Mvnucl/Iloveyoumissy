@@ -34,280 +34,222 @@
     text-align: center;
   }
 
-  /* Animated hearts */
-  .heart {
-    position: absolute;
-    bottom: -50px;
-    width: 30px;
-    height: 30px;
-    background-color: #d81b60;
-    clip-path: polygon(
-      50% 0%, 61% 8%, 68% 17%, 75% 27%, 78% 39%, 78% 52%,
-      75% 65%, 68% 75%, 61% 83%, 50% 92%, 39% 83%, 32% 75%,
-      25% 65%, 22% 52%, 22% 39%, 25% 27%, 32% 17%, 39% 8%
-    );
-    animation: floatUp 7s linear infinite;
+  /* Photos container */
+  .photos-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px auto;
   }
 
-  @keyframes floatUp {
-    0% {
-      bottom: -50px;
-      opacity: 1;
-      transform: translateX(0) rotate(0deg);
-    }
-    100% {
-      bottom: 110vh;
-      opacity: 0;
-      transform: translateX(50px) rotate(720deg);
-    }
-  }
-
-  /* Scattered photos */
+  /* Scattered photos styles */
   .scattered-photo {
     position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
 
+  /* Individual photo positions using transform */
   #photo1 {
-    top: 40px;
-    left: 20px;
-    width: 110px;
-    height: 130px;
-    transform: rotate(-12deg);
-    z-index: 30;
+    top: 10px;
+    left: 0;
+    transform: rotate(-10deg);
+    z-index: 10;
   }
-
   #photo2 {
-    top: 20px;
+    top: 0;
     left: 100px;
-    width: 110px;
-    height: 130px;
-    transform: rotate(14deg);
-    z-index: 25;
+    transform: rotate(8deg);
+    z-index: 12;
   }
-
   #photo3 {
     top: 130px;
-    left: 50px;
-    width: 110px;
-    height: 130px;
-    transform: rotate(10deg);
-    z-index: 20;
+    left: 20px;
+    transform: rotate(15deg);
+    z-index: 9;
   }
-
   #photo4 {
-    top: 90px;
-    left: 140px;
-    width: 110px;
-    height: 130px;
-    transform: rotate(-9deg);
-    z-index: 15;
+    top: 120px;
+    left: 160px;
+    transform: rotate(-12deg);
+    z-index: 11;
   }
 
-  /* Title styling */
-  h1.title {
+  /* Header text styling */
+  h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.2rem;
-    margin-bottom: 0.3em;
-    color: #c62828;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    font-size: 3.6rem;
+    color: #b71c1c;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin: 0 0 10px 0;
   }
 
-  /* Subtitle */
+  /* Subtitle text */
   .subtitle {
     font-weight: 700;
-    font-size: 1.1rem;
-    color: #6a1b9a;
+    font-size: 1.15rem;
+    color: #5e0069;
+    margin-top: 0;
     margin-bottom: 2rem;
+    max-width: 450px;
   }
 
-  /* Bible Quote block */
-  .bible-quote {
-    max-width: 320px;
-    margin: 0 auto 2rem auto;
-    padding: 25px;
-    background: #f8bbd0;
+  /* Bible quote container */
+  .quote-container {
+    background: rgba(255 255 255 / 0.85);
     border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    padding: 30px;
+    max-width: 480px;
+    margin: 0 auto 40px auto;
     font-style: italic;
     font-weight: 500;
+    color: #7b1fa2;
     line-height: 1.5;
-    color: #880e4f;
+    box-shadow: 0 8px 16px rgba(123,31,162,0.25);
+  }
+  .quote-container b {
+    font-weight: 900;
+    font-style: normal;
   }
 
-  .bible-quote b {
-    font-weight: 700;
-  }
-
-  /* Spotify Embed Container */
+  /* Spotify player container */
   .spotify-player {
-    max-width: 320px;
-    margin: 0 auto 2rem auto;
+    max-width: 480px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   }
 
-  iframe {
-    border-radius: 16px;
-  }
-
-  /* Eat Button */
+  /* Eat button style */
   #eat-button {
-    display: block;
-    margin: 0 auto 4rem auto;
-    padding: 14px 32px;
+    background: #d81b60;
+    color: white;
     font-weight: 700;
+    padding: 12px 30px;
     font-size: 1.2rem;
-    color: #fff;
-    background: linear-gradient(135deg, #c2185b, #e91e63);
-    border: none;
     border-radius: 30px;
-    box-shadow: 0 8px 15px rgba(194,24,91,0.5);
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    margin: 0 auto 60px auto;
+    display: block;
+    box-shadow: 0 6px 12px rgba(216,27,96,0.6);
+    transition: background 0.3s ease;
   }
-
   #eat-button:hover {
-    background: linear-gradient(135deg, #e91e63, #f48fb1);
-    box-shadow: 0 12px 20px rgba(233,30,99,0.7);
+    background: #a31544;
   }
 
-  /* Eat GIF */
-  #eat-gif {
-    display: none;
-    max-width: 220px;
-    margin: 0 auto 3rem auto;
-  }
-
-  /* Pink Hearts Text animation */
-  .pink-text {
+  /* Animated hearts and text */
+  .heart, .floating-text {
     position: absolute;
-    font-weight: 700;
-    color: #ff1493;
-    font-size: 1.2rem;
-    animation: floatTextUp 7s linear infinite;
-    opacity: 1;
+    bottom: -50px;
+    font-weight: 900;
+    font-size: 1rem;
+    animation: floatUp 8s linear infinite;
+    opacity: 0;
+  }
+  .heart {
+    width: 30px;
+    height: 30px;
+    background-color: #d81b60;
+    clip-path: polygon(50% 0%, 61% 12%, 75% 15%, 88% 28%, 91% 41%, 91% 58%, 82% 70%, 70% 80%, 50% 100%, 30% 80%, 18% 70%, 9% 58%, 9% 41%, 12% 28%, 25% 15%, 39% 12%);
+  }
+  .floating-text {
+    color: #e91e63;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
   }
 
-  @keyframes floatTextUp {
+  /* Floating up animation */
+  @keyframes floatUp {
     0% {
-      bottom: -20px;
+      transform: translateY(0) translateX(0);
       opacity: 1;
-      transform: translateX(0) rotate(0deg);
     }
     100% {
-      bottom: 110vh;
+      transform: translateY(-500px) translateX(20px);
       opacity: 0;
-      transform: translateX(50px) rotate(720deg);
     }
   }
 
-  /* Responsive fixes for mobile */
-  @media (max-width: 600px) {
-    .scattered-photo {
-      max-width: 25vw !important;
-      max-height: 25vw !important;
-      margin-top: 80px; /* push photos below header */
-    }
-
-    .header-container {
-      margin-bottom: 20px;
-    }
-
-    .bible-quote {
-      margin-top: 40px;
-    }
-  }
 </style>
 </head>
 <body>
-  <div class="header-container">
-    <h1 class="title">For Missy Garcia 💖</h1>
-    <div>
-      <img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
-      <img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
-      <img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
-      <img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
-    </div>
-    <p class="subtitle">Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</p>
-  </div>
 
-  <div class="bible-quote">
-    “Love is patient, love is kind. It does not envy, it does not boast, it is not proud.<br/>
-    It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.<br/>
-    Love does not delight in evil but rejoices with the truth. It always protects, always trusts,<br/>
-    always hopes, always perseveres.”<br/>
+<div class="header-container">
+  <h1>For Missy Garcia 💖</h1>
+  <div class="photos-container">
+    <img id="photo1" class="scattered-photo" src="IMG_6655.jpeg" alt="Photo 1" />
+    <img id="photo2" class="scattered-photo" src="IMG_6656.jpeg" alt="Photo 2" />
+    <img id="photo3" class="scattered-photo" src="IMG_6657.jpg" alt="Photo 3" />
+    <img id="photo4" class="scattered-photo" src="IMG_6658.jpeg" alt="Photo 4" />
+  </div>
+  <p class="subtitle">Happy National Girlfriend Day my love! Distance can't stop how much I adore you.</p>
+</div>
+
+<div class="quote-container">
+  <p>
+    “Love is patient, love is kind. It<br />
+    does not envy, it does not boast, it is not proud.<br />
+    It does not dishonor others, it<br />
+    is not self-seeking, it is not easily angered, it keeps no record of wrongs.<br />
+    Love does not delight in evil but rejoices with the truth. It always protects, always trusts,<br />
+    always hopes, always perseveres.”<br /><br />
     <b>1 Corinthians 13:4-7</b>
-  </div>
+  </p>
+</div>
 
-  <div class="spotify-player">
-    <iframe
-      data-testid="embed-iframe"
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator"
-      width="100%"
-      height="352"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      allowfullscreen
-    ></iframe>
-  </div>
+<div class="spotify-player">
+  <iframe
+    data-testid="embed-iframe"
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/3d8PDk3B4am5c6TsUCznUW?utm_source=generator"
+    width="100%"
+    height="352"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>
+</div>
 
-  <button id="eat-button">Eat 🍽️</button>
-  <img id="eat-gif" src="Eating bubu and dudu.gif" alt="Bubu and Dude Eating Animation" />
+<button id="eat-button">Eat 🍽️</button>
 
-  <!-- Floating hearts container -->
-  <div id="hearts-container"></div>
-  <!-- Floating pink text container -->
-  <div id="pink-text-container"></div>
+<script>
+  // Eat button logic
+  const eatBtn = document.getElementById('eat-button');
 
-  <script>
-    // Eat button logic
-    const eatBtn = document.getElementById('eat-button');
-    const eatGif = document.getElementById('eat-gif');
+  eatBtn.addEventListener('click', () => {
+    alert("Enjoy your meal! 🍽️❤️");
+  });
 
-    eatBtn.addEventListener('click', () => {
-      eatGif.style.display = 'block';
-      setTimeout(() => {
-        eatGif.style.display = 'none';
-      }, 7000);
-    });
+  // Animate hearts and floating text creation
+  function createFloatingElement(className, content, leftPercent) {
+    const el = document.createElement('div');
+    el.className = className;
+    el.style.left = leftPercent + '%';
+    if (className === 'floating-text') el.textContent = content;
+    document.body.appendChild(el);
 
-    // Floating hearts logic
-    const heartsContainer = document.getElementById('hearts-container');
-    const pinkTextContainer = document.getElementById('pink-text-container');
+    // Remove after animation ends (8s)
+    setTimeout(() => el.remove(), 8000);
+  }
 
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (4 + Math.random() * 5) + 's';
-      heartsContainer.appendChild(heart);
+  // Continuously generate hearts and floating text at random intervals
+  setInterval(() => {
+    // Random left position for hearts and text (5% to 90%)
+    const heartLeft = Math.random() * 85 + 5;
+    const textLeft = Math.random() * 85 + 5;
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-    }
+    createFloatingElement('heart', null, heartLeft);
+    createFloatingElement('floating-text', 'Happy National Girlfriend Day', textLeft);
+  }, 700);
+</script>
 
-    function createPinkText() {
-      const text = document.createElement('div');
-      text.classList.add('pink-text');
-      text.style.left = Math.random() * 100 + 'vw';
-      text.textContent = 'Happy national girlfriend day';
-      text.style.animationDuration = (5 + Math.random() * 5) + 's';
-      pinkTextContainer.appendChild(text);
-
-      setTimeout(() => {
-        text.remove();
-      }, 10000);
-    }
-
-    setInterval(createHeart, 600);
-    setInterval(createPinkText, 1200);
-  </script>
 </body>
 </html>
+
