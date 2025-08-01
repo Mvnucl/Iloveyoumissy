@@ -125,23 +125,11 @@
     overflow: hidden;
   }
 
-  /* Eat button style */
-  #eat-button {
-    background: #d81b60;
-    color: white;
-    font-weight: 700;
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto 60px auto;
+  /* GIF container */
+  #eat-gif {
     display: block;
-    box-shadow: 0 6px 12px rgba(216,27,96,0.6);
-    transition: background 0.3s ease;
-  }
-  #eat-button:hover {
-    background: #a31544;
+    margin: 0 auto 60px auto;
+    max-width: 240px;
   }
 
   /* Animated hearts and text */
@@ -172,11 +160,10 @@
       opacity: 1;
     }
     100% {
-      transform: translateY(-500px) translateX(20px);
+      transform: translateY(-700px) translateX(20px);
       opacity: 0;
     }
   }
-
 </style>
 </head>
 <body>
@@ -217,16 +204,14 @@
   ></iframe>
 </div>
 
-<button id="eat-button">Eat 🍽️</button>
+<!-- Keep the GIF visible, no button -->
+<img
+  id="eat-gif"
+  src="Eating bubu and dudu.gif"
+  alt="Bubu and Dude Eating Animation"
+/>
 
 <script>
-  // Eat button logic
-  const eatBtn = document.getElementById('eat-button');
-
-  eatBtn.addEventListener('click', () => {
-    alert("Enjoy your meal! 🍽️❤️");
-  });
-
   // Animate hearts and floating text creation
   function createFloatingElement(className, content, leftPercent) {
     const el = document.createElement('div');
@@ -252,4 +237,3 @@
 
 </body>
 </html>
-
